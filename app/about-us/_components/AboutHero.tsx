@@ -2,6 +2,11 @@
 import {aboutHero} from "../about-data";
 import {Reveal} from "@/shared/components/ui/motion-primitives";
 
+const brandName = "Huang Shan Global";
+const firstBrandIndex = aboutHero.description.indexOf(brandName);
+const descriptionBeforeBrand = aboutHero.description.slice(0, firstBrandIndex);
+const descriptionAfterBrand = aboutHero.description.slice(firstBrandIndex + brandName.length);
+
 export function AboutHero() {
     return (
         <section className="relative min-h-[330px] overflow-hidden md:min-h-[380px]">
@@ -26,7 +31,9 @@ export function AboutHero() {
                         {aboutHero.title}
                     </h1>
                     <p className="mt-4 max-w-3xl text-[15px] font-medium leading-7 text-white/92 md:text-[16px]">
-                        {aboutHero.description}
+                        {descriptionBeforeBrand}
+                        {firstBrandIndex >= 0 && <strong className="text-white">{brandName}</strong>}
+                        {firstBrandIndex >= 0 ? descriptionAfterBrand : aboutHero.description}
                     </p>
                 </Reveal>
             </div>

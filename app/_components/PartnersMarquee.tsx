@@ -18,7 +18,7 @@ export function PartnersMarquee({
                                     className = "",
                                     trackClassName = "gap-4 px-5 md:gap-5",
                                     cardClassName = "h-[104px] w-[142px] rounded-[18px] p-4 md:h-[132px] md:w-[176px] md:rounded-[20px]",
-                                    speed = 24,
+                                    speed = 36,
                                 }: PartnersMarqueeProps) {
     const scrollerRef = useRef<HTMLDivElement>(null);
     const isPausedRef = useRef(false);

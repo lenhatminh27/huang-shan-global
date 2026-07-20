@@ -8,7 +8,7 @@ import {AnimatePresence, motion} from "motion/react";
 const navItems = [
     {label: "Trang chủ", href: "/"},
     {label: "Về chúng tôi", href: "/about-us"},
-    {label: "Dịch vụ", href: "/#dich-vu"},
+    {label: "Dịch vụ", href: "/services"},
     {label: "Tuyển dụng", href: "/#tuyen-dung"},
     {label: "Tin tức", href: "/#tin-tuc"},
     {label: "Liên hệ", href: "/#lien-he"},
@@ -137,3 +137,4 @@ export function Header() {
         </>
     );
 }
+
