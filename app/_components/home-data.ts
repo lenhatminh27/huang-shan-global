@@ -78,7 +78,7 @@ export const partners = [{
     image: "https://huangshanglobal.vn/wp-content/uploads/2026/05/doi-tac-cong-ty-tnhh-thuc-pham-dinh-duong-xuan-an.webp",
     alt: "doi-tac-cong-ty-tnhh-thuc-pham-dinh-duong-xuan-an"
 }, {
-    image: "https://huangshanglobal.vn/wp-content/uploads/2026/05/doi-tac-cong-ty-tnhh-thuc-pham-dinh-duong-xuan-an.webp",
+    image: "https://huangshanglobal.vn/wp-content/uploads/2026/05/doi-tac-cong-ty-tte-safe-scaled.webp",
     alt: "doi-tac-cong-ty-tnhh-thuc-pham-dinh-duong-xuan-an"
 }, {
     image: "https://huangshanglobal.vn/wp-content/uploads/2026/05/doi-tac-cong-ty-tnhh-thuc-pham-dinh-duong-xuan-an.webp",

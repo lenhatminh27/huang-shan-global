@@ -16,18 +16,18 @@ export function Services() {
                         đội ngũ kỹ thuật viên giàu kinh nghiệm.
                     </p>
                 </Reveal>
-                <StaggerGroup className="mt-9 grid gap-6 md:grid-cols-2 lg:grid-cols-3" staggerDelay={0.11}>
+                <StaggerGroup className="mt-9 grid grid-cols-2 gap-3 md:gap-6 lg:grid-cols-3" staggerDelay={0.11}>
                     {services.map((service, index) => (
                         <MotionCard key={service.title}
                                     variant={index % 2 === 0 ? "flip" : "drift"}
                                     hover="tilt"
-                                    className="group relative aspect-[1.45] overflow-hidden rounded-[24px] bg-[#d8e5dc] text-left shadow-sm">
+                                    className="group relative aspect-[1.05] overflow-hidden rounded-[18px] md:aspect-[1.45] md:rounded-[24px] bg-[#d8e5dc] text-left shadow-sm">
                             <Image src={service.image} alt={service.title} fill
                                    className="object-cover transition duration-500 group-hover:scale-105"
                                    sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 90vw"/>
                             <div
                                 className="absolute inset-0 bg-gradient-to-br from-black/65 via-black/25 to-transparent"/>
-                            <h3 className="absolute left-7 top-6 max-w-[230px] text-2xl font-bold leading-tight text-white drop-shadow">{service.title}</h3>
+                            <h3 className="absolute left-4 top-4 max-w-[135px] whitespace-pre-line text-base font-bold leading-tight text-white drop-shadow md:left-7 md:top-6 md:max-w-[230px] md:text-2xl">{service.title}</h3>
                         </MotionCard>
                     ))}
                 </StaggerGroup>
@@ -39,3 +39,4 @@ export function Services() {
         </section>
     );
 }
+

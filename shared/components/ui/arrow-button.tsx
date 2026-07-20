@@ -1,10 +1,10 @@
 ﻿'use client'
 
-import {ButtonHTMLAttributes, ReactNode} from "react";
+import {ReactNode} from "react";
 import Image from "next/image";
-import {motion} from "motion/react";
+import {HTMLMotionProps, motion} from "motion/react";
 
-interface ArrowButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ArrowButtonProps extends HTMLMotionProps<"button"> {
     hasArrow?: boolean;
     children: ReactNode;
 }
@@ -21,10 +21,11 @@ const ArrowButton = ({hasArrow = true, children, className, ...props}: ArrowButt
         >
             {children}
             {hasArrow &&
-                <Image src={'/icon/arrow.svg'} className={'mt-0.5'} width={18} height={18} alt={'arrow icon'}/>}
+                <Image src={'/icon/arrow.svg'} style={{height: 'auto'}} className="mt-0.5 size-[18px]"
+                       width={18} height={18}
+                       alt={'arrow icon'}/>}
         </motion.button>
     )
 }
 
 export default ArrowButton
-

@@ -12,11 +12,11 @@ export function Stats() {
                     <p className="mt-2 text-[16px] text-secondary">Những con số khẳng định vị thế đơn vị logistics tiên
                         phong.</p>
                 </Reveal>
-                <StaggerGroup className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4" staggerDelay={0.07}>
+                <StaggerGroup className="mt-12 grid grid-cols-2 gap-6 md:gap-8 lg:grid-cols-4" staggerDelay={0.07}>
                     {stats.map((item) => (
-                        <MotionItem key={item.value} className="text-left" variant="pop">
-                            <CountUpNumber value={item.value} className="text-5xl font-bold leading-none text-primary"/>
-                            <p className="mx-auto mt-2 max-w-36 text-base font-semibold leading-5 text-[#69a577]">{item.label}</p>
+                        <MotionItem key={item.value} className="text-center md:text-left" variant="pop">
+                            <CountUpNumber value={item.value} className="text-4xl font-bold leading-none text-primary md:text-5xl"/>
+                            <p className="mx-auto mt-2 max-w-36 text-sm font-semibold leading-5 text-[#69a577] md:text-base">{item.label}</p>
                         </MotionItem>
                     ))}
                 </StaggerGroup>
@@ -29,4 +29,5 @@ export function Stats() {
         </section>
     );
 }
+
 

@@ -87,7 +87,7 @@ export function Reveal({children, className, delay = 0, variant = "up"}: RevealP
             initial="hidden"
             whileInView="visible"
             viewport={viewport}
-            transition={{duration: variant === "clip" ? 1.5 : 1.2, ease: [0.22, 1, 0.36, 1], delay}}
+            transition={{duration: variant === "clip" ? 1.3 : 1, ease: [0.22, 1, 0.36, 1], delay}}
         >
             {children}
         </motion.div>
@@ -116,7 +116,7 @@ export function MotionItem({children, className, variant = "rise"}: MotionItemPr
         <motion.div
             className={className}
             variants={itemVariants[variant]}
-            transition={{duration: 1.3, ease: [0.22, 1, 0.36, 1]}}
+            transition={{duration: 1.2, ease: [0.22, 1, 0.36, 1]}}
         >
             {children}
         </motion.div>
@@ -128,7 +128,7 @@ export function MotionCard({children, className, variant = "rise", hover = "lift
         <motion.article
             className={className}
             variants={itemVariants[variant]}
-            transition={{duration: 1.3, ease: [0.22, 1, 0.36, 1]}}
+            transition={{duration: 1.2, ease: [0.22, 1, 0.36, 1]}}
             whileHover={hoverVariants[hover]}
         >
             {children}
@@ -143,10 +143,10 @@ export function Floating({children, className, delay = 0}: MotionProps) {
             initial={{opacity: 0, scale: 0.92}}
             whileInView={{opacity: 1, scale: 1}}
             viewport={viewport}
-            animate={{y: [0, -8, 0], rotate: [0, 0.8, 0]}}
+            // animate={{y: [0, -8, 0], rotate: [0, 0.8, 0]}}
             transition={{
-                opacity: {duration: 1.5, delay},
-                scale: {duration: 1.5, delay},
+                opacity: {duration: 1.4, delay},
+                scale: {duration: 1.4, delay},
                 y: {duration: 7.5, repeat: Infinity, ease: "easeInOut", delay: delay + 0.2},
                 rotate: {duration: 8.2, repeat: Infinity, ease: "easeInOut", delay: delay + 0.2},
             }}
