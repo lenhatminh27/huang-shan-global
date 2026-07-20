@@ -2,16 +2,16 @@
 
 import {useState} from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {AnimatePresence, motion} from "motion/react";
-import ArrowButton from "@/shared/components/ui/arrow-button";
 
 const navItems = [
-    {label: "Trang chủ", href: "#home"},
-    {label: "Về chúng tôi", href: "#ve-chung-toi"},
-    {label: "Dịch vụ", href: "#dich-vu"},
-    {label: "Tuyển dụng", href: "#tuyen-dung"},
-    {label: "Tin tức", href: "#tin-tuc"},
-    {label: "Liên hệ", href: "#lien-he"},
+    {label: "Trang chủ", href: "/"},
+    {label: "Về chúng tôi", href: "/about-us"},
+    {label: "Dịch vụ", href: "/#dich-vu"},
+    {label: "Tuyển dụng", href: "/#tuyen-dung"},
+    {label: "Tin tức", href: "/#tin-tuc"},
+    {label: "Liên hệ", href: "/#lien-he"},
 ];
 
 export function Header() {
@@ -38,20 +38,20 @@ export function Header() {
                         </span>
                     </button>
 
-                    <a href="#home" className="flex min-w-0 items-center justify-center gap-3 md:justify-start"
-                       aria-label="Huang Shan Global">
+                    <Link href="/" className="flex min-w-0 items-center justify-center gap-3 md:justify-start"
+                          aria-label="Huang Shan Global">
                         <Image src="/logo/logo.png" alt="Huang Shan Global" width={162} height={52} priority
                                className="h-11 w-auto md:h-12"/>
-                    </a>
+                    </Link>
 
                     <div className="md:hidden"/>
 
                     <nav className="hidden items-center gap-8 text-[14px] font-bold uppercase text-[#3f8d57] lg:flex">
                         {navItems.map((item) => (
-                            <a key={item.label} href={item.href}
-                               className="transition hover:text-[#216a3a]">
+                            <Link key={item.label} href={item.href}
+                                  className="transition hover:text-[#216a3a]">
                                 {item.label}
-                            </a>
+                            </Link>
                         ))}
                     </nav>
 
@@ -68,7 +68,12 @@ export function Header() {
                             aria-label="Tìm kiếm">
                             <Image src="/icon/search.svg" alt="search icon" width={16} height={16}/>
                         </button>
-                        <ArrowButton hasArrow={false} className="px-8 ml-4">Liên hệ</ArrowButton>
+                        <Link
+                            href="/#lien-he"
+                            className="ml-4 inline-flex justify-center rounded-full bg-linear-to-b from-[#87CA8E] to-[#448A54] px-8 py-2 text-[16px] font-bold text-white transition hover:-translate-y-0.5 hover:from-[#448A54] hover:to-[#87CA8E]"
+                        >
+                            Liên hệ
+                        </Link>
                     </div>
                 </div>
             </header>
@@ -106,14 +111,14 @@ export function Header() {
 
                             <nav className="flex flex-col text-[12px] font-bold uppercase text-[#777f79]">
                                 {navItems.map((item) => (
-                                    <a
+                                    <Link
                                         key={item.label}
                                         href={item.href}
                                         onClick={closeMenu}
                                         className="border-b border-[#edf1ed] px-4 py-5 tracking-wide transition hover:bg-[#f6fbf7] hover:text-primary"
                                     >
                                         {item.label}
-                                    </a>
+                                    </Link>
                                 ))}
                             </nav>
                         </motion.aside>

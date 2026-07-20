@@ -34,8 +34,8 @@ const revealVariants = {
 
 const itemVariants = {
     rise: {
-        hidden: {opacity: 0, y: 22},
-        visible: {opacity: 1, y: 0},
+        hidden: {opacity: 0, x: 22, y: 44},
+        visible: {opacity: 1, x: 0, y: 0},
     },
     pop: {
         hidden: {opacity: 0, scale: 0.82, y: 18},
@@ -87,7 +87,7 @@ export function Reveal({children, className, delay = 0, variant = "up"}: RevealP
             initial="hidden"
             whileInView="visible"
             viewport={viewport}
-            transition={{duration: variant === "clip" ? 1.3 : 1, ease: [0.22, 1, 0.36, 1], delay}}
+            transition={{duration: variant === "clip" ? 2 : 1.7, ease: [0.22, 1, 0.36, 1], delay}}
         >
             {children}
         </motion.div>
