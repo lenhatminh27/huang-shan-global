@@ -9,9 +9,9 @@ const navItems = [
     {label: "Trang chủ", href: "/"},
     {label: "Về chúng tôi", href: "/about-us"},
     {label: "Dịch vụ", href: "/services"},
-    {label: "Tuyển dụng", href: "/#tuyen-dung"},
-    {label: "Tin tức", href: "/#tin-tuc"},
-    {label: "Liên hệ", href: "/#lien-he"},
+    {label: "Tuyển dụng", href: "/recruitment"},
+    {label: "Tin tức", href: "/news"},
+    {label: "Liên hệ", href: "/contact"},
 ];
 
 export function Header() {
@@ -69,7 +69,7 @@ export function Header() {
                             <Image src="/icon/search.svg" alt="search icon" width={16} height={16}/>
                         </button>
                         <Link
-                            href="/#lien-he"
+                            href="/contact"
                             className="ml-4 inline-flex justify-center rounded-full bg-linear-to-b from-[#87CA8E] to-[#448A54] px-8 py-2 text-[16px] font-bold text-white transition hover:-translate-y-0.5 hover:from-[#448A54] hover:to-[#87CA8E]"
                         >
                             Liên hệ
@@ -137,4 +137,7 @@ export function Header() {
         </>
     );
 }
+
+
+
 
