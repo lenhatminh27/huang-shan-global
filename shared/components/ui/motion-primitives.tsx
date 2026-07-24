@@ -87,7 +87,7 @@ export function Reveal({children, className, delay = 0, variant = "up"}: RevealP
             initial="hidden"
             whileInView="visible"
             viewport={viewport}
-            transition={{duration: variant === "clip" ? 2 : 1.7, ease: [0.22, 1, 0.36, 1], delay}}
+            transition={{duration: 1.7, ease: [0.22, 1, 0.36, 1], delay}}
         >
             {children}
         </motion.div>

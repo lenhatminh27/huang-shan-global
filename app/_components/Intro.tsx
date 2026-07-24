@@ -4,10 +4,10 @@ import {Floating, Reveal} from "@/shared/components/ui/motion-primitives";
 
 export function Intro() {
     return (
-        <section id="ve-chung-toi" className="bg-[#F9FFF9] py-8 md:py-16">
-            <div className="mx-auto grid max-w-6xl items-center gap-[12px] px-5 md:grid-cols-[1fr_210px] md:px-10">
+        <section id="ve-chung-toi" className="bg-[#F9FFF9] section-y">
+            <div className="mx-auto grid max-w-6xl items-center section-gap px-5 md:grid-cols-[1fr_210px] md:px-10">
                 <Reveal variant="left" delay={0.3}>
-                    <h1 className="text-2xl font-bold leading-tight text-[#448A54] md:text-4xl">
+                    <h1 className="text-[21px] font-bold leading-tight text-[#448A54] md:text-4xl">
                         Lựa chọn hàng đầu về Thương mại xuất nhập khẩu
                     </h1>
                     <p className="mt-4 max-w-3xl text-[16px] leading-7 text-[#729085]">
@@ -16,7 +16,7 @@ export function Intro() {
                         giàu kinh nghiệm, chúng tôi cam kết nhanh chóng - an toàn - minh bạch - tối ưu chi phí, trở
                         thành đối tác tin cậy cho giao thương Trung-Việt.
                     </p>
-                    <ArrowButton className={'mt-8'}>
+                    <ArrowButton className={'section-mt'}>
                         <span className={'font-bold'}>Câu chuyện của Huang Shan Global</span>
                     </ArrowButton>
                 </Reveal>
@@ -29,4 +29,6 @@ export function Intro() {
         </section>
     );
 }
+
+
 

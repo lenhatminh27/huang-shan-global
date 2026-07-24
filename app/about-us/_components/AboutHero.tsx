@@ -9,7 +9,7 @@ const descriptionAfterBrand = aboutHero.description.slice(firstBrandIndex + bran
 
 export function AboutHero() {
     return (
-        <section className="relative min-h-[330px] overflow-hidden md:min-h-[380px]">
+        <section className="relative page-banner overflow-hidden">
             <Image
                 src={aboutHero.image}
                 alt="Cảng vận chuyển quốc tế"
@@ -21,16 +21,16 @@ export function AboutHero() {
             <div className="absolute inset-0 bg-linear-to-r from-[#000000]/50 to-10%-[#FFFFFF00]"/>
 
             <div
-                className="relative z-10 mx-auto flex min-h-[330px] max-w-8xl items-center px-5 py-14 md:min-h-[380px] md:px-10">
+                className="relative z-10 mx-auto flex page-banner max-w-8xl items-center px-5 section-y md:px-10">
                 <Reveal variant="left" className="max-w-4xl text-white">
                     <span
                         className="inline-flex rounded-full bg-[#FFFFFF3D]/24 px-4 py-2 text-xs font-medium uppercase tracking-wide text-white/90 backdrop-blur">
                         {aboutHero.eyebrow}
                     </span>
-                    <h1 className="mt-5 text-[24px] font-semibold leading-tight md:text-[36px]">
+                    <h1 className="mt-5 text-[21px] font-semibold leading-tight md:text-[36px]">
                         {aboutHero.title}
                     </h1>
-                    <p className="mt-4 max-w-3xl text-[15px] font-medium leading-7 text-white/92 md:text-[16px]">
+                    <p className="mt-4 max-w-3xl text-[12px] font-medium leading-7 text-white/92 md:text-[16px]">
                         {descriptionBeforeBrand}
                         {firstBrandIndex >= 0 && <strong className="text-white">{brandName}</strong>}
                         {firstBrandIndex >= 0 ? descriptionAfterBrand : aboutHero.description}
@@ -40,3 +40,5 @@ export function AboutHero() {
         </section>
     );
 }
+
+

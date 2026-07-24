@@ -30,7 +30,7 @@ function JobCard({job, index}: { job: (typeof jobPositions)[number]; index: numb
             />
             <div className="absolute inset-0 bg-linear-to-br from-primary/78 via-primary/25 to-white/72"/>
             <div className="relative z-10 flex min-h-[176px] flex-col md:min-h-[196px]">
-                <h3 className="text-[22px] font-bold leading-tight">{job.title}</h3>
+                <h3 className="text-[21px] md:text-[22px] font-bold leading-tight">{job.title}</h3>
                 <p className="mt-3 text-[15px] font-bold">Địa điểm làm việc:</p>
                 <p className="mt-1 text-[15px] font-medium text-white/88">{job.location}</p>
                 <p className="mt-3 text-[15px] font-bold">Thời gian đăng ký:</p>
@@ -60,21 +60,21 @@ export function JobPositions() {
 
     return (
         <section id="vi-tri-tuyen-dung"
-                 className="watermark-section before:top-[-10px] bg-[#f9fff9] py-12 md:before:top-[-22px] md:py-16">
+                 className="watermark-section before:top-[-10px] bg-[#f9fff9] section-y md:before:top-[-22px]">
             <div className="mx-auto max-w-8xl px-5 text-center md:px-10">
                 <Reveal variant="scale">
-                    <h2 className="text-[32px] font-bold text-primary">Vị trí tuyển dụng</h2>
+                    <h2 className="text-[21px] md:text-[32px] font-bold text-primary">Vị trí tuyển dụng</h2>
                     <p className="mt-2 text-[16px] font-medium text-secondary">Gia nhập cùng chúng tôi</p>
                 </Reveal>
 
                 {isDesktop ? (
-                    <StaggerGroup className="mt-8 grid gap-5 md:grid-cols-3 md:gap-6" staggerDelay={0.08}>
+                    <StaggerGroup className="section-mt grid section-gap md:grid-cols-3 " staggerDelay={0.08}>
                         {jobPositions.map((job, index) => (
                             <JobCard key={job.title} job={job} index={index}/>
                         ))}
                     </StaggerGroup>
                 ) : (
-                    <div className="mt-8 overflow-hidden px-1">
+                    <div className="section-mt overflow-hidden px-1">
                         <AnimatePresence initial={false} custom={direction} mode="wait">
                             <motion.div
                                 key={activeJob.title}
@@ -115,7 +115,7 @@ export function JobPositions() {
                 <Reveal variant="blur" delay={0.08}>
                     <Link
                         href="#ung-tuyen"
-                        className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-linear-to-b from-[#87CA8E] to-[#448A54] px-5 py-2 text-[16px] font-bold text-white transition hover:-translate-y-0.5 hover:from-[#448A54] hover:to-[#87CA8E]"
+                        className="section-mt inline-flex items-center justify-center gap-2 rounded-full bg-linear-to-b from-[#87CA8E] to-[#448A54] px-5 py-2 text-[16px] font-bold text-white transition hover:-translate-y-0.5 hover:from-[#448A54] hover:to-[#87CA8E]"
                     >
                         Xem thêm
                         <Image src="/icon/arrow.svg" alt="" width={18} height={18} className="h-auto w-[18px]"/>
@@ -125,3 +125,8 @@ export function JobPositions() {
         </section>
     );
 }
+
+
+
+
+

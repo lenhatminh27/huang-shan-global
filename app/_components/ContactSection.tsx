@@ -2,11 +2,11 @@
 
 export function ContactSection() {
     return (
-        <section id="lien-he" className="relative overflow-hidden py-14 text-white md:py-18">
+        <section id="lien-he" className="relative overflow-hidden section-y text-white">
             <div className="absolute inset-0 bg-[url('/cskh.png')] bg-cover bg-center"/>
-            <div className="relative mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-2 md:px-10">
+            <div className="relative mx-auto grid max-w-7xl section-gap px-5 md:grid-cols-2 md:px-10">
                 <Reveal className="self-center" variant="left">
-                    <h2 className="text-[28px] font-semibold">Kết nối với Huang Shan Global</h2>
+                    <h2 className="text-[21px] md:text-[28px] font-semibold">Kết nối với Huang Shan Global</h2>
                     <p className="mt-5 max-w-2xl text-[16px] leading-7 text-white/90">
                         Mọi hành trình kinh doanh đều cần một người đồng hành tin cậy. Với đội ngũ chuyên sự tận tâm và
                         am hiểu thị trường Trung - Việt, Huang Shan Global luôn sẵn sàng hỗ trợ bạn tối ưu chi phí nhập
@@ -14,12 +14,12 @@ export function ContactSection() {
                         nghiệp của bạn.
                     </p>
                     <span
-                        className="mt-7 inline-flex rounded-full border border-white/60 px-5 py-1.5 text-[14px] font-medium uppercase text-white bg-[#FFFFFF]/20">Huang Shang Global</span>
+                        className="section-mt inline-flex rounded-full border border-white/60 px-5 py-1.5 text-[14px] font-medium uppercase text-white bg-[#FFFFFF]/20">Huang Shang Global</span>
                 </Reveal>
 
                 <Reveal delay={0.12} variant="blur">
-                    <form className="grid gap-4" aria-label="Đăng ký tư vấn">
-                        <div className="grid gap-4 sm:grid-cols-2">
+                    <form className="grid section-gap" aria-label="Đăng ký tư vấn">
+                        <div className="grid section-gap sm:grid-cols-2">
                             <label className="text-[16px] font-semibold text-white/90">
                                 Họ và tên
                                 <input
@@ -55,3 +55,7 @@ export function ContactSection() {
         </section>
     );
 }
+
+
+
+

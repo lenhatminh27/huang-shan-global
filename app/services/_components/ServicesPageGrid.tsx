@@ -5,13 +5,13 @@ import {MotionCard, Reveal, StaggerGroup} from "@/shared/components/ui/motion-pr
 
 export function ServicesPageGrid() {
     return (
-        <section className="bg-[#f9fff9] py-14 md:py-16">
+        <section className="bg-[#f9fff9] section-y">
             <div className="mx-auto max-w-6xl px-5 text-center md:px-10">
                 <Reveal variant="up">
-                    <h2 className="text-[32px] font-bold text-primary">Dịch vụ của chúng tôi</h2>
+                    <h2 className="text-[21px] md:text-[32px] font-bold text-primary">Dịch vụ của chúng tôi</h2>
                 </Reveal>
 
-                <StaggerGroup className="mx-auto mt-8 grid max-w-5xl gap-5 md:grid-cols-2 md:gap-7" staggerDelay={0.12}>
+                <StaggerGroup className="section-mt mx-auto grid section-gap max-w-5xl md:grid-cols-2 " staggerDelay={0.12}>
                     {servicesPageItems.map((service, index) => (
                         <MotionCard
                             key={service.title}
@@ -29,7 +29,7 @@ export function ServicesPageGrid() {
                             <div className="absolute inset-0 bg-black/32"/>
                             <div
                                 className="absolute inset-0 bg-linear-to-br from-black/45 via-black/12 to-transparent"/>
-                            <h3 className="absolute left-8 top-8 max-w-[210px] whitespace-pre-line text-[24px] font-semibold leading-tight text-white drop-shadow md:text-[26px]">
+                            <h3 className="absolute left-8 top-8 max-w-[210px] whitespace-pre-line text-[21px] font-semibold leading-tight text-white drop-shadow md:text-[26px]">
                                 {service.title}
                             </h3>
                             <Link
@@ -46,5 +46,11 @@ export function ServicesPageGrid() {
         </section>
     );
 }
+
+
+
+
+
+
 
 

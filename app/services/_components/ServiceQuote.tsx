@@ -9,10 +9,10 @@ interface ServiceQuoteProps {
 
 export function ServiceQuote({service}: ServiceQuoteProps) {
     return (
-        <section className="bg-white py-12 md:py-16">
-            <div className="mx-auto grid max-w-8xl items-center gap-9 px-5 md:grid-cols-2 md:px-10">
+        <section className="bg-white section-y">
+            <div className="mx-auto grid max-w-8xl items-center section-gap px-5 md:grid-cols-2 md:px-10">
                 <Reveal variant="left">
-                    <h2 className="text-[32px] font-semibold text-primary md:text-[34px]">Báo giá Dịch vụ</h2>
+                    <h2 className="text-[21px] font-semibold text-primary md:text-[34px]">Báo giá Dịch vụ</h2>
                     <div className="mt-6 space-y-4 text-[20px] leading-8 text-[#9aa0a8] md:text-[22px]">
                         {service.pricing.map((item) => (
                             <p key={item.label}>
@@ -22,7 +22,7 @@ export function ServiceQuote({service}: ServiceQuoteProps) {
                     </div>
                     <Link
                         href="#lien-he"
-                        className="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-linear-to-b from-[#87CA8E] to-[#448A54] px-5 py-2 text-[16px] font-bold text-white transition hover:-translate-y-0.5 hover:from-[#448A54] hover:to-[#87CA8E]"
+                        className="section-mt inline-flex items-center justify-center gap-2 rounded-full bg-linear-to-b from-[#87CA8E] to-[#448A54] px-5 py-2 text-[16px] font-bold text-white transition hover:-translate-y-0.5 hover:from-[#448A54] hover:to-[#87CA8E]"
                     >
                         Liên hệ ngay
                         <Image src="/icon/arrow.svg" alt="" width={18} height={18} className="h-auto w-[18px]"/>
@@ -45,3 +45,7 @@ export function ServiceQuote({service}: ServiceQuoteProps) {
         </section>
     );
 }
+
+
+
+

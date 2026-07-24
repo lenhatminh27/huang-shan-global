@@ -36,16 +36,16 @@ export function Testimonials() {
     };
 
     return (
-        <section className="bg-white py-14 md:py-18">
+        <section className="bg-white section-y">
             <div className="mx-auto max-w-7xl px-5 text-center md:px-10">
                 <Reveal>
-                    <h2 className="text-[32px] font-bold text-primary">Phản hồi của Khách hàng</h2>
+                    <h2 className="text-[21px] md:text-[32px] font-bold text-primary">Phản hồi của Khách hàng</h2>
                     <p className="text-[16px] text-secondary">Nhập khẩu máy móc chất lượng an toàn, đảm bảo tiến độ,
                         dịch
                         vụ hậu cần tốt trên toàn quốc</p>
                 </Reveal>
 
-                <div className="mt-8 flex items-center justify-center gap-5">
+                <div className="section-mt flex items-center justify-center gap-5">
                     <button
                         type="button"
                         onClick={() => goTo(currentSlide - 1)}
@@ -75,7 +75,7 @@ export function Testimonials() {
                                     if (info.offset.x < -70) goTo(currentSlide + 1);
                                     if (info.offset.x > 70) goTo(currentSlide - 1);
                                 }}
-                                className="grid grid-cols-1 gap-6 md:grid-cols-2"
+                                className="grid grid-cols-1 section-gap md:grid-cols-2"
                             >
                                 {activeTestimonials.map((item) => (
                                     <article
@@ -83,7 +83,7 @@ export function Testimonials() {
                                         className="rounded-[24px] bg-[#F5F5F5] p-6 text-left shadow-[0_16px_38px_rgba(45,82,53,0.08)] md:p-8"
                                     >
                                         <div
-                                            className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+                                            className="flex flex-col section-gap sm:flex-row sm:items-start sm:justify-between">
                                             <div className="flex min-w-0 items-start gap-4">
                                                 <div
                                                     className="relative size-18 shrink-0 overflow-hidden rounded-full bg-white shadow-[0_8px_22px_rgba(45,82,53,0.10)]">
@@ -96,15 +96,15 @@ export function Testimonials() {
                                                     />
                                                 </div>
                                                 <div className="min-w-0 pt-1">
-                                                    <h3 className="text-base font-bold leading-snug text-primary md:text-lg">{item.name}</h3>
-                                                    <p className="mt-1 text-sm font-medium text-[#87CA8E]">{item.role}</p>
+                                                    <h3 className="text-[15px] font-bold leading-snug text-primary md:text-lg">{item.name}</h3>
+                                                    <p className="mt-1 text-xs font-medium text-[#87CA8E]">{item.role}</p>
                                                 </div>
                                             </div>
                                             <div
-                                                className="shrink-0 text-[22px] tracking-[0.10em] text-[#73bf82]">★★★★★
+                                                className="shrink-0 text-[22px] tracking-[0.10em] text-[#73bf82] mx-auto">★★★★★
                                             </div>
                                         </div>
-                                        <p className="mt-5 border-t border-[#e3ebe5] pt-5 text-sm leading-7 text-[#809188] md:text-base">{item.content}</p>
+                                        <p className="mt-4 border-t border-[#e3ebe5] pt-5 text-sm leading-7 text-[#809188] md:text-base">{item.content}</p>
                                     </article>
                                 ))}
                             </motion.div>
@@ -135,10 +135,14 @@ export function Testimonials() {
                 </div>
 
                 <Reveal delay={0.08}>
-                    <ArrowButton className="mx-auto mt-8"> Xem thêm</ArrowButton>
+                    <ArrowButton className="mx-auto section-mt"> Xem thêm</ArrowButton>
                 </Reveal>
             </div>
         </section>
     );
 }
+
+
+
+
 

@@ -36,13 +36,13 @@ export function NewsSection() {
 
     return (
         <section id="tin-tuc"
-                 className="watermark-section before:top-[-10px] md:before:top-[-18px] xl:before:top-[-26px] bg-[#f4fcf5] py-14 md:py-18">
+                 className="watermark-section before:top-[-10px] md:before:top-[-18px] xl:before:top-[-26px] bg-[#f4fcf5] section-y">
             <div className="mx-auto max-w-8xl px-5 text-center md:px-10">
                 <Reveal variant="right">
-                    <h2 className="text-[32px] font-bold text-primary">Tin tức</h2>
+                    <h2 className="text-[21px] md:text-[32px] font-bold text-primary">Tin tức</h2>
                 </Reveal>
 
-                <div className="relative mt-3 overflow-hidden px-1">
+                <div className="section-mt relative overflow-hidden px-1">
                     <AnimatePresence initial={false} custom={direction} mode="wait">
                         <motion.div
                             key={`${currentSlide}-${itemsPerSlide}`}
@@ -59,19 +59,19 @@ export function NewsSection() {
                                 if (info.offset.x < -70) goTo(currentSlide + 1);
                                 if (info.offset.x > 70) goTo(currentSlide - 1);
                             }}
-                            className="grid grid-cols-1 gap-7 md:grid-cols-3"
+                            className="mx-auto grid max-w-7xl grid-cols-1 section-gap md:grid-cols-3"
                         >
                             {activeNews.map((item, index) => (
                                 <article key={`${item.title}-${index}`}
-                                         className="overflow-hidden rounded-[24px] bg-linear-100 from-primary to-[#87CA8E] text-left text-white shadow-sm">
-                                    <div className="relative aspect-[1.34]">
+                                         className="overflow-hidden rounded-[18px] bg-linear-100 from-primary to-[#87CA8E] text-left text-white shadow-sm md:rounded-[20px]">
+                                    <div className="relative aspect-[1.55]">
                                         <Image src={item.thumbnail} alt={item.title} fill className="object-cover"
                                                sizes="(min-width: 768px) 31vw, 90vw"/>
                                     </div>
-                                    <div className="p-7">
-                                        <h3 className="text-lg font-bold line-clamp-3">{item.title}</h3>
+                                    <div className="p-5 md:p-6">
+                                        <h3 className="text-[21px] md:text-lg font-bold line-clamp-3">{item.title}</h3>
                                         <p className="mt-1 text-sm text-white/90">{item.meta}</p>
-                                        <p className="mt-5 border-t border-white/50 pt-4 text-sm text-white/90 line-clamp-4">{item.excerpt}</p>
+                                        <p className="mt-4 border-t border-white/50 pt-4 text-sm text-white/90 line-clamp-4">{item.excerpt}</p>
                                     </div>
                                 </article>
                             ))}
@@ -93,7 +93,7 @@ export function NewsSection() {
                 </div>
 
                 <Reveal delay={0.08} variant="blur">
-                    <ArrowButton className={'mt-10 mx-auto'}>
+                    <ArrowButton className={'section-mt mx-auto'}>
                         Xem tất cả
                     </ArrowButton>
                 </Reveal>
@@ -101,4 +101,10 @@ export function NewsSection() {
         </section>
     );
 }
+
+
+
+
+
+
 

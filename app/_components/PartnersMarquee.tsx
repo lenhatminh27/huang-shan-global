@@ -5,7 +5,9 @@ import Image from "next/image";
 import {motion} from "motion/react";
 import {partners} from "./home-data";
 
-const partnerLoop = [...partners, ...partners, ...partners];
+const LOOP_COUNT = 5;
+const START_SEGMENT = 2;
+const partnerLoop = Array.from({length: LOOP_COUNT}, () => partners).flat();
 
 interface PartnersMarqueeProps {
     className?: string;
@@ -16,7 +18,7 @@ interface PartnersMarqueeProps {
 
 export function PartnersMarquee({
                                     className = "",
-                                    trackClassName = "gap-4 px-5 md:gap-5",
+                                    trackClassName = "section-gap px-5",
                                     cardClassName = "h-[104px] w-[142px] rounded-[18px] p-4 md:h-[132px] md:w-[176px] md:rounded-[20px]",
                                     speed = 36,
                                 }: PartnersMarqueeProps) {
@@ -30,22 +32,22 @@ export function PartnersMarquee({
         let frame = 0;
         let previousTime = performance.now();
 
-        const getSegmentWidth = () => scroller.scrollWidth / 3;
+        const getSegmentWidth = () => scroller.scrollWidth / LOOP_COUNT;
 
         const normalizeScroll = () => {
             const segmentWidth = getSegmentWidth();
             if (!segmentWidth) return;
 
-            if (scroller.scrollLeft >= segmentWidth * 2) {
+            if (scroller.scrollLeft >= segmentWidth * (START_SEGMENT + 1)) {
                 scroller.scrollLeft -= segmentWidth;
             }
 
-            if (scroller.scrollLeft <= 0) {
+            if (scroller.scrollLeft <= segmentWidth * (START_SEGMENT - 1)) {
                 scroller.scrollLeft += segmentWidth;
             }
         };
 
-        scroller.scrollLeft = getSegmentWidth();
+        scroller.scrollLeft = getSegmentWidth() * START_SEGMENT;
 
         const tick = (time: number) => {
             const delta = time - previousTime;
@@ -73,7 +75,7 @@ export function PartnersMarquee({
     return (
         <div
             ref={scrollerRef}
-            className={`cursor-grab overflow-x-auto overflow-y-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] [scrollbar-width:none] active:cursor-grabbing [&::-webkit-scrollbar]:hidden ${className}`}
+            className={`cursor-grab overflow-x-auto overflow-y-visible py-2 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] [scrollbar-width:none] active:cursor-grabbing [&::-webkit-scrollbar]:hidden ${className}`}
             onPointerDown={() => (isPausedRef.current = true)}
             onPointerUp={() => (isPausedRef.current = false)}
             onPointerLeave={() => (isPausedRef.current = false)}
@@ -84,8 +86,8 @@ export function PartnersMarquee({
                 {partnerLoop.map((partner, index) => (
                     <motion.div
                         key={`${partner.alt}-${index}`}
-                        className={`flex shrink-0 items-center justify-center bg-white shadow-[0_10px_26px_rgba(0,0,0,0.10)] ${cardClassName}`}
-                        whileHover={{scale: 1.06, rotate: index % 2 === 0 ? 1 : -1}}
+                        className={`flex shrink-0 items-center justify-center bg-white ${cardClassName}`}
+                        whileHover={{scale: 1.06}}
                         transition={{type: "spring", stiffness: 180, damping: 24}}
                     >
                         <Image
@@ -102,3 +104,6 @@ export function PartnersMarquee({
         </div>
     );
 }
+
+
+

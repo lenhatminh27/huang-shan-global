@@ -6,18 +6,18 @@ import ArrowButton from "@/shared/components/ui/arrow-button";
 
 export function ContactMain() {
     return (
-        <section className="watermark-section before:top-[-10px] bg-[#f4fcf5] py-12 md:before:top-[-24px] md:py-16">
+        <section className="watermark-section before:top-[-10px] bg-[#f4fcf5] section-y md:before:top-[-24px]">
             <div className="mx-auto max-w-8xl px-5 md:px-10">
                 <Reveal variant="scale" className="text-center">
-                    <h2 className="text-[32px] font-bold text-primary md:text-[36px]">Liên hệ với chúng tôi</h2>
+                    <h2 className="text-[21px] font-bold text-primary md:text-[36px]">Liên hệ với chúng tôi</h2>
                     <p className="mt-2 text-[18px] font-medium text-[#8e9691] md:text-[20px]">Tư vấn và chăm sóc khách
                         hàng mọi lúc</p>
                 </Reveal>
 
-                <div className="mt-9 grid gap-10 md:grid-cols-[0.9fr_1.35fr] md:gap-14">
+                <div className="section-mt grid section-gap md:grid-cols-[0.9fr_1.35fr] ">
                     <Reveal variant="left">
                         <div>
-                            <h3 className="text-[26px] font-bold text-primary md:text-[28px]">{contactOffice.title}</h3>
+                            <h3 className="text-[21px] font-bold text-primary md:text-[28px]">{contactOffice.title}</h3>
                             <address
                                 className="mt-4 space-y-1 text-[17px] not-italic leading-7 text-primary md:text-[18px]">
                                 <p><span className="font-bold">Địa chỉ:</span> {contactOffice.address}</p>
@@ -26,7 +26,7 @@ export function ContactMain() {
                                 <p><span className="font-bold">Website:</span> {contactOffice.website}</p>
                             </address>
 
-                            <div className="mt-5 flex items-center gap-6" aria-label="Mạng xã hội">
+                            <div className="section-mt flex items-center gap-6" aria-label="Mạng xã hội">
                                 {socialLinks.map((item) => (
                                     <Link key={item.label} href={item.href} aria-label={item.label}
                                           className="transition hover:-translate-y-0.5">
@@ -42,7 +42,7 @@ export function ContactMain() {
                             </div>
 
                             <div
-                                className="mt-8 h-[260px] max-w-[410px] overflow-hidden rounded-[28px] bg-white shadow-[0_14px_32px_rgba(38,87,50,0.08)] md:h-[280px]">
+                                className="mt-6 h-[260px] max-w-[410px] overflow-hidden rounded-[28px] bg-white shadow-[0_14px_32px_rgba(38,87,50,0.08)] md:h-[280px]">
                                 <iframe
                                     title="Bản đồ trụ sở Huang Shan Global"
                                     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7450.41020364086!2d105.741045!3d20.984414!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3134537ddb396b8f%3A0xcdbbe0bf92bef1a4!2zR2VsZXhpbWNvIGtodSBDLCBMw6ogVHLhu41uZyBU4bqlbg!5e0!3m2!1svi!2sus!4v1784624470434!5m2!1svi!2sus"
@@ -57,9 +57,9 @@ export function ContactMain() {
 
                     <Reveal variant="right" delay={0.08}>
                         <div>
-                            <h3 className="text-[26px] font-bold text-primary md:text-[28px]">Thông tin liên hệ</h3>
-                            <form className="mt-6 grid gap-5" aria-label="Thông tin liên hệ">
-                                <div className="grid gap-5 sm:grid-cols-2">
+                            <h3 className="text-[21px] font-bold text-primary md:text-[28px]">Thông tin liên hệ</h3>
+                            <form className="section-mt grid section-gap" aria-label="Thông tin liên hệ">
+                                <div className="grid section-gap sm:grid-cols-2">
                                     <label className="text-[16px] font-medium text-[#7c8580]">
                                         Họ và tên
                                         <input
@@ -100,5 +100,11 @@ export function ContactMain() {
         </section>
     );
 }
+
+
+
+
+
+
 
 
